@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: users
+# Table name: employees
 #
 #  id                     :integer          not null, primary key
 #  email                  :string           default(""), not null
@@ -21,14 +21,10 @@
 #  occupation             :string
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+require 'test_helper'
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+class EmployeeTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end

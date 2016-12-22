@@ -1,0 +1,6 @@
+<p>Hola <%= @employee.first_name %>,</p>
+<p>Has sido invitado(a) por <%= "#{@invited_by.first_name} #{@invited_by.last_name}" %> a la app expenses tracker, con la cual podremos hacer seguimientos a los gastos de tus viajes. Completa tu registro haciendo click en el siguiente vínculo:</p>
+<p><%= link_to "Completar registro", edit_employee_password_url(initial: true, reset_password_token: @token) %></p>
+<p>Saludos,</p>
+
+<p style="margin-left: 15px;">Equipo de Expenses tracker</p>

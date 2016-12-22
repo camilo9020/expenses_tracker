@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: users
+# Table name: employees
 #
 #  id                     :integer          not null, primary key
 #  email                  :string           default(""), not null
