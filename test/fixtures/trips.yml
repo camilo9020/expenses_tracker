@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: trips
+#
+#  id          :integer          not null, primary key
+#  employee_id :integer
+#  destiny     :string
+#  begin_date  :date
+#  end_date    :date
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee: one
+  destiny: MyString
+  begin_date: 2016-12-22
+  end_date: 2016-12-22
+
+two:
+  employee: two
+  destiny: MyString
+  begin_date: 2016-12-22
+  end_date: 2016-12-22

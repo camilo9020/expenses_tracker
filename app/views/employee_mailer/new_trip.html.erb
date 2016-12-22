@@ -1,0 +1,8 @@
+<p>Hello <%= @employee.first_name %>,</p>
+<p>Was schecule a new trip in the app <strong>Expenses tracker</strong>, with destiny to: <strong><%= "#{@trip.destiny}" %></strong>, the begin and end dates are:</p>
+<p><strong>Begin date: </strong><%= "#{@trip.begin_date}" %></p>
+<p><strong>End date: </strong><%= "#{@trip.end_date}" %></p>
+<p>To register the expenses of your trip, please go to the app following the next link: <%= link_to "Expenses tracker link", root_url %></p>
+
+<p>Thanks!</p>
+<p><strong>Expenses tracker Team</strong></p>

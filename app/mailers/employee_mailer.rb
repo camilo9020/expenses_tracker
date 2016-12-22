@@ -6,11 +6,11 @@ class EmployeeMailer < ApplicationMailer
     mail(to: employee.email, subject: "Haz sido invitado a la aplicación Expenses tracker")
   end
 
-  # def new_question(employee, question)
-  #   @employee = employee
-  #   @question = question
-  #   mail(to: employee.email, subject: "Nueva pregunta en #{employee.account.name} - #{question.knowledge_base.name}")
-  # end
+  def new_trip(trip)
+    @employee = trip.employee
+    @trip = trip
+    mail(to: trip.employee.email, subject: "Se le ha programado un nuevo viaje a #{trip.destiny}")
+  end
 
   # def new_answer(employee, answer)
   #   @employee = employee
