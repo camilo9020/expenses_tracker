@@ -1,0 +1,7 @@
+<tr id="<%= expense.id %>">
+  <td><%= expense.description %></td>
+  <td><%= expense.amount %></td>
+  <td><%= expense.tags %></td>
+  <td><%= link_to 'Delete', expense_path(expense), method: :delete, data: {confirm: 'Are you sure?'}, remote: true %></td>
+</tr>
+

@@ -15,3 +15,13 @@
 //= require bootstrap_sb_admin_base_v2
 //= require turbolinks
 //= require_tree .
+
+
+$(document).on('turbolinks:load', function() {
+  $('[data-toggle="tooltip"]').tooltip();
+  $(function() {
+     $('.alert').delay(500).fadeIn('normal', function() {
+        $(this).fadeOut(5000);
+     });
+  });
+});
