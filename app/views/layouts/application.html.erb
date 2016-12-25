@@ -40,6 +40,9 @@
              <%= link_to '<i class="fa fa-users fa-fw"></i> Employees'.html_safe, admin_employees_path %>
             </li>
             <li>
+             <%= link_to '<i class="fa fa-users fa-fw"></i> Expense Categories'.html_safe, admin_categories_path %>
+            </li>
+            <li>
              <%= link_to current_employee.admin? ? '<i class="fa fa-plane fa-fw"></i> All Trips'.html_safe : '<i class="fa fa-plane fa-fw"></i> My Trips'.html_safe, trips_path %>
             </li>
           </ul>

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :trips
   resources :expenses
   namespace :admin do
-    resources :employees, except: [:show]
+    resources :employees
+    resources :categories
+    resources :reports
   end
 end

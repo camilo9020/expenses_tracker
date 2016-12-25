@@ -36,6 +36,11 @@ class Admin::EmployeesController < ApplicationController
 
   end
 
+  def show
+    @employee = Employee.find(params[:id])
+    @categories = Category.all
+  end
+
   def edit
     @employee = Employee.find(params[:id])
   end

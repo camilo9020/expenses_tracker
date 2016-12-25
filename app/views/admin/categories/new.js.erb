@@ -1,0 +1,4 @@
+$('<%= j render 'form', title: 'New Category', url: admin_categories_path, button_text: 'Create' %>').on('hidden.bs.modal', function (e) {
+  $(this).remove();
+  $('.modal-backdrop').remove();
+}).modal();

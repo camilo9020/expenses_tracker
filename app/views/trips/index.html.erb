@@ -1,6 +1,9 @@
 <div class="row">
   <div class="col-lg-12">
       <div class="page-header">
+        <% if current_employee.admin? %>
+          <p><%= link_to '<span class="glyphicon glyphicon-plus"> New Trip</span>'.html_safe, new_trip_path, class: "btn btn-primary pull-right" %></p>
+        <% end %>
         <h1>My Trips list</h1>
       </div>
   </div>

@@ -10,6 +10,7 @@
   <div class="col-lg-8">
     <p><strong>Begin date:</strong> <%= @trip.begin_date %></p>
     <p><strong>End date:</strong> <%= @trip.end_date %></p>
+    <p><%= link_to 'Print report', admin_new_report_path, class: 'btn btn-default' %></p>
   </div>
 </div>
 <div class="row">
@@ -28,7 +29,7 @@
         <tr id="<%= expense.id %>">
           <td><%= expense.description %></td>
           <td><%= expense.amount %></td>
-          <td><%= expense.tags %></td>
+          <td><%= expense.category.name %></td>
           <td><%= link_to 'Delete', expense_path(expense), method: :delete, data: {confirm: 'Are you sure?'}, remote: true %></td>
         </tr>
       <% end %>

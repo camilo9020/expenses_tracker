@@ -4,7 +4,6 @@ class CreateExpenses < ActiveRecord::Migration[5.0]
       t.references :trip, foreign_key: true
       t.string :description
       t.decimal :amount
-      t.string :tags
       t.timestamps
     end
   end
