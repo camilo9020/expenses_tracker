@@ -1,5 +1,6 @@
 <tr id="<%= category.id %>">
   <td><%= category.name %></td>
+  <td><%= category.expenses.sum(:amount) %></td>
   <td><%= link_to 'Edit', edit_admin_category_path(category) %> | <%= link_to 'Delete', admin_category_path(category), method: :delete, data: {confirm: 'Are you sure?'} %></td>
 </tr>
 

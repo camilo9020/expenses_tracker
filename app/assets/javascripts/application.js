@@ -24,4 +24,5 @@ $(document).on('turbolinks:load', function() {
         $(this).fadeOut(5000);
      });
   });
+  $('#report-button').removeAttr('data-disable-with');
 });

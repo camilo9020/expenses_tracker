@@ -35,6 +35,6 @@
     </tbody>
   </table>
   <% if current_employee.admin? && @trip.end_date < Time.now %>
-    <%= link_to 'Trip Report (PDF Format)', trip_path(@trip, format: 'pdf'), target: '_blank', class: 'btn btn-default' %>
+    <%= link_to 'Trip Report (PDF Format)', admin_trip_report_path(id: @trip.id, format: 'pdf'), target: '_blank', class: 'btn btn-default' %>
     <% end %>
 </div>

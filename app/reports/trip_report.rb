@@ -1,11 +1,11 @@
-class TripPdf < Prawn::Document
+class TripReport < Prawn::Document
 
   def initialize(user, trip)
     super()
     @user = user
     @trip = trip
     report_head
-    table_expenses
+    expenses_table
     totals
     footer
   end
@@ -18,7 +18,7 @@ class TripPdf < Prawn::Document
     text "End date: #{@trip.end_date}", size: 15, style: :bold
   end
 
-  def table_expenses
+  def expenses_table
     move_down 20
     table line_expenses_rows, width: bounds.width do
       row(0).font_style = :bold

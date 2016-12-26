@@ -46,7 +46,11 @@ class Admin::EmployeesController < ApplicationController
   end
 
   def update
-
+    @employee = Employee.find(params[:id])
+    if @employee.update(employee_params)
+      flash[:success] = 'The employee was updated successfully'
+      redirect_to admin_employees_path
+    end
   end
 
   def destroy

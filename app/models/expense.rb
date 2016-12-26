@@ -14,4 +14,5 @@
 class Expense < ApplicationRecord
   belongs_to :trip
   belongs_to :category
+  validates :description, :amount, :category_id, presence: true
 end

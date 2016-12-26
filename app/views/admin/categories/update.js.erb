@@ -1,0 +1,12 @@
+$("ul.errors").html("")
+<% if @category.errors.empty? %>
+  // add the row to the table, show alert and hide modal
+  $('tr#<%= @category.id %>').replaceWith(' <%= j render "row", category: @category %>');
+  $('.flash-messages').append("<div class='alert alert-notice'>The category was updated!</div>").show();
+  $('#category-modal').modal('hide');
+<% else %>
+  //show errors
+  <% @category.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+  <% end %>
+<% end %>

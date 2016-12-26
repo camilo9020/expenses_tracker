@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :employees
     resources :categories
+    get 'category_report' => "reports#category_report"
+    get "trip_report" => "reports#trip_report"
   end
 end

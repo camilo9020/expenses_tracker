@@ -10,8 +10,8 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
-
 class Trip < ApplicationRecord
   belongs_to :employee
   has_many :expenses
+  validates :employee_id, :destiny, :begin_date, :end_date, presence: true
 end

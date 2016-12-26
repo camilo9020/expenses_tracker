@@ -13,19 +13,6 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @expenses = @trip.expenses.paginate(page: params[:page], per_page: 10)
-    respond_to do |format|
-      format.html
-      format.pdf do
-        pdf = TripPdf.new(current_employee, @trip)
-        send_data pdf.render, filename: "#{@trip.destiny + '_' + current_employee.first_name + current_employee.last_name +  @trip.begin_date.to_s }to#{@trip.end_date.to_s}",
-                              type: "application/pdf",
-                              disposition: "inline"
-      end
-    end
-    puts @trip.end_date
-    puts Time.now
-    puts true if @trip.end_date < Time.now
-
   end
 
   def new
