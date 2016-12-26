@@ -10,7 +10,6 @@
   <div class="col-lg-8">
     <p><strong>Begin date:</strong> <%= @trip.begin_date %></p>
     <p><strong>End date:</strong> <%= @trip.end_date %></p>
-    <p><%= link_to 'Print report', admin_new_report_path, class: 'btn btn-default' %></p>
   </div>
 </div>
 <div class="row">
@@ -35,4 +34,7 @@
       <% end %>
     </tbody>
   </table>
+  <% if current_employee.admin? && @trip.end_date < Time.now %>
+    <%= link_to 'Trip Report (PDF Format)', trip_path(@trip, format: 'pdf'), target: '_blank', class: 'btn btn-default' %>
+    <% end %>
 </div>
