@@ -16,15 +16,10 @@
  *= require bootstrap_sb_admin_base_v2
  */
 
- .alert-growl {
-   position: fixed;
-   top: 55px;
-   right: 20px;
-   max-width: 500px;
-   z-index: 1000;
- }
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
- /*flash*/
+  /*flash*/
  .alert-error {
      background-color: #f2dede;
      border-color: #eed3d7;

@@ -1,5 +1,6 @@
 class Admin::CategoriesController < ApplicationController
   before_action :authenticate_employee!
+  before_filter :authorized?
 
   def index
     @categories = Category.all
@@ -33,4 +34,5 @@ class Admin::CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit(:name)
   end
+
 end

@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-lg-12">
     <div class="page-header">
-      <p><%= link_to 'Regresar', :back, class: 'btn btn-default pull-right' %></p>
+      <p><%= link_to 'Back', trips_path, class: 'btn btn-default pull-right' %></p>
       <h1><%= title %></h1>
     </div>
   </div>
@@ -29,7 +29,7 @@
         <%= f.collection_select :employee_id, Employee.all, :id, :email, {include_blank: 'Select an employee'}, class: 'form-control' %>
       </div>
       <div class="actions">
-        <%= f.submit 'Guardar', class: 'btn btn-primary' %>
+        <%= f.submit 'Save', class: 'btn btn-primary' %>
       </div>
     <% end %>
   </div>
