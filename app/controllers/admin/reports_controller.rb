@@ -1,4 +1,8 @@
 class Admin::ReportsController < ApplicationController
+
+  before_action :authenticate_employee!
+  before_filter :authorized?
+
   def trip_report
     @trip = Trip.find(params[:id])
     @expenses = @trip.expenses.paginate(page: params[:page], per_page: 10)

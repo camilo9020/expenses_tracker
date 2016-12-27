@@ -1,6 +1,7 @@
 class Admin::EmployeesController < ApplicationController
 
   before_action :authenticate_employee!
+  before_filter :authorized?
 
   def index
     @employees = Employee.all
@@ -29,11 +30,10 @@ class Admin::EmployeesController < ApplicationController
     end
     if @employee.valid?
       EmployeeMailer.invite_new_employee(current_employee, @employee, raw_token).deliver_now
-      notice = is_resend ? "Se ha notificado al empleado del cambio exitosamente" : "El empleado ha sido creado y notificado exitosamente"
+      notice = is_resend ? "The employee was notificated" : "The employee was created and notificated "
       flash[:success] = notice
       redirect_to admin_employees_path
     end
-
   end
 
   def show
