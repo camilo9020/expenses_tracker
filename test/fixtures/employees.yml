@@ -19,6 +19,7 @@
 #  first_name             :string
 #  last_name              :string
 #  occupation             :string
+#  api_token              :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

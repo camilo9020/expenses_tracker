@@ -19,7 +19,9 @@
 #  first_name             :string
 #  last_name              :string
 #  occupation             :string
+#  api_token              :string
 #
+
 class Employee < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -27,4 +29,10 @@ class Employee < ApplicationRecord
   validates :first_name, :last_name, :occupation, :email, presence: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  after_initialize :generate_token
+
+  private
+    def generate_token
+      self.api_token ||= SecureRandom.hex if new_record?
+    end
 end
