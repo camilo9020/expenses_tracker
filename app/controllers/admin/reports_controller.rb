@@ -9,7 +9,7 @@ class Admin::ReportsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        pdf = TripReport.new(current_employee, @trip)
+        pdf = TripReport.new(@trip)
         send_data pdf.render, filename: "#{@trip.destiny + '_' + current_employee.first_name + current_employee.last_name +  @trip.begin_date.to_s }to#{@trip.end_date.to_s}",
                               type: "application/pdf",
                               disposition: "inline"

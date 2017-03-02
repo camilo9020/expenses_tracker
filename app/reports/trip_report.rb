@@ -1,8 +1,8 @@
 class TripReport < Prawn::Document
 
-  def initialize(user, trip)
+  def initialize(trip)
     super()
-    @user = user
+    @user = trip.employee
     @trip = trip
     report_head
     expenses_table

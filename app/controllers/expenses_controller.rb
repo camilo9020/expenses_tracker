@@ -13,6 +13,7 @@ class ExpensesController < ApplicationController
   def create
     @expense = Expense.new(expense_params)
     @expense.save
+    flash[:success] = nil #probar
   end
 
   def destroy
